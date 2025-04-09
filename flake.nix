@@ -12,8 +12,8 @@
     flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = import nixpkgs {inherit system;};
-        projectFile = "./leetcode/Leetcode.csproj";
-        testProjectFile = "./leetcode.test/Leetcode.test.csproj";
+        projectFile = "./leetcode/leetcode.csproj";
+        testProjectFile = "./leetcode.test/leetcode.test.csproj";
         dotnet-sdk = pkgs.dotnetCorePackages.dotnet_10.sdk;
         dotnet-runtime = pkgs.dotnetCorePackages.dotnet_10.runtime;
         version = "0.0.1";
