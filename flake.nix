@@ -14,8 +14,8 @@
         pkgs = import nixpkgs {inherit system;};
         projectFile = "./leetcode/Leetcode.csproj";
         testProjectFile = "./leetcode.test/Leetcode.test.csproj";
-        dotnet-sdk = pkgs.dotnet-sdk_8;
-        dotnet-runtime = pkgs.dotnetCorePackages.runtime_8_0;
+        dotnet-sdk = pkgs.dotnetCorePackages.dotnet_10.sdk;
+        dotnet-runtime = pkgs.dotnetCorePackages.dotnet_10.runtime;
         version = "0.0.1";
       in {
         packages = {
