@@ -24,7 +24,7 @@
             pname = "rynplynch-leetcode";
             version = version;
             src = ./.;
-            nugetDeps = ./nix/deps.nix; # run `nix build .#default.passthru.fetch-deps && ./result` and put the result here
+            nugetDeps = ./deps.json;
             doCheck = true;
           };
         };
