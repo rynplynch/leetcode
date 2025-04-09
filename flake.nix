@@ -21,7 +21,7 @@
         packages = {
           default = pkgs.buildDotnetModule {
             inherit projectFile testProjectFile dotnet-sdk dotnet-runtime;
-            pname = "rynplynch-leetcode";
+            pname = "leetcode";
             version = version;
             src = ./.;
             nugetDeps = ./deps.json;
