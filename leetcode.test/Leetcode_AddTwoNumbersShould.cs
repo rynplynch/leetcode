@@ -46,6 +46,24 @@ namespace Leetcode.Test
             Assert.Equal(expected, mockResult);
         }
 
+        [Fact]
+        public void EncodeIntIntoListNodeList_3789_ReturnsListNodesInOrder9873()
+        {
+            //Given
+            int toEncode = 3789;
+
+            //When
+            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+
+            ListNode expected = new(9, null);
+            expected.next = new ListNode(8, null);
+            expected.next.next = new ListNode(7, null);
+            expected.next.next.next = new ListNode(3, null);
+
+            //Then
+            Assert.Equal(expected, mockResult);
+        }
+
         private static ListNode CreateEmptyListNode()
         {
             return new ListNode(0, null);
