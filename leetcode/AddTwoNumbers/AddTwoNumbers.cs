@@ -36,6 +36,11 @@ namespace Leetcode.AddTwoNumbers
                 return false;
             }
         }
+
+        public override int GetHashCode()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     public class Solution
