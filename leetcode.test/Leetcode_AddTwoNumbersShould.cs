@@ -18,6 +18,19 @@ namespace Leetcode.Test
             Assert.Equal(CreateEmptyListNode(), mockResult);
         }
 
+        [Fact]
+        public void EncodeIntIntoListNodeList_0_ReturnsListNodeWith0()
+        {
+            //Given
+            int toEncode = 0;
+
+            //When
+            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+
+            //Then
+            Assert.Equal(CreateEmptyListNode(), mockResult);
+        }
+
         private static ListNode CreateEmptyListNode()
         {
             return new ListNode(0, null);
