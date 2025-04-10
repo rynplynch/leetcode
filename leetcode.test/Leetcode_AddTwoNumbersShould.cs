@@ -31,6 +31,21 @@ namespace Leetcode.Test
             Assert.Equal(CreateEmptyListNode(), mockResult);
         }
 
+        [Fact]
+        public void EncodeIntIntoListNodeList_9_ReturnsListNodeWith9()
+        {
+            //Given
+            int toEncode = 9;
+
+            //When
+            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+
+            ListNode expected = new(9, null);
+
+            //Then
+            Assert.Equal(expected, mockResult);
+        }
+
         private static ListNode CreateEmptyListNode()
         {
             return new ListNode(0, null);
