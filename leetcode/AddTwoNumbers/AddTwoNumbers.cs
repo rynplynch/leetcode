@@ -63,6 +63,9 @@ namespace Leetcode.AddTwoNumbers
                 // return a single Node list with val = 0
                 return entry;
 
+            // we change this reference in the loop
+            ListNode current = entry;
+
             // while the input does not equal 0
             while ( val != 0)
             {
