@@ -73,13 +73,23 @@ namespace Leetcode.AddTwoNumbers
                 int remainder = val % 10;
 
                 // this remainder is put into the linked list
-                entry.val = remainder;
+                current.val = remainder;
+
 
                 // we've record this number, remove it from the whole
                 val -= remainder;
 
                 // remove the tailing 0
                 val /= 10;
+
+                // if we are going to loop again
+                if ( val != 0 )
+                {
+                    // create a new ListNode
+                    current.next = new();
+                    // make the current node the next node
+                    current = current.next;
+                }
             }
 
             return entry;
