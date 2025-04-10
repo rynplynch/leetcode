@@ -15,7 +15,7 @@ namespace Leetcode.Test
             ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
 
             //Then
-            Assert.Equal(0, mockResult.val);
+            Assert.Equal(CreateEmptyListNode(), mockResult);
         }
 
         private static ListNode CreateEmptyListNode()
