@@ -8,13 +8,11 @@ namespace Leetcode.Test
         public void AddTwoNumbers_EmptyListNodes_ReturnsEmptyListNode()
         {
             //Given
-            Solution solution = new();
-
             ListNode l1 = CreateEmptyListNode();
             ListNode l2 = CreateEmptyListNode();
 
             //When
-            ListNode mockResult = solution.AddTwoNumbers(l1, l2);
+            ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
 
             //Then
             Assert.Equal(0, mockResult.val);
