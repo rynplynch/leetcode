@@ -94,5 +94,17 @@ namespace Leetcode.AddTwoNumbers
 
             return entry;
         }
+
+        // parse a collection of ListNode's, returning an integer value
+        public static int ParseListNodes(ListNode? ln)
+        {
+            int sum = 0;
+
+            while (ln != null)
+            {
+                ln = ln.next;
+            }
+            return sum;
+        }
     }
 }
