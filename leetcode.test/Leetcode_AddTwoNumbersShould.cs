@@ -77,6 +77,19 @@ namespace Leetcode.Test
             Assert.Equal(0, mockResult);
         }
 
+        [Fact]
+        public void ParseListNodes_9_ReturnsListNode9()
+        {
+            //Given
+            ListNode toParse = new(9, null);
+
+            //When
+            int mockResult = Solution.ParseListNodes(toParse);
+
+            //Then
+            Assert.Equal(9, mockResult);
+        }
+
         private static ListNode CreateEmptyListNode()
         {
             return new ListNode(0, null);
