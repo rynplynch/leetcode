@@ -78,7 +78,7 @@ namespace Leetcode.Test
         }
 
         [Fact]
-        public void ParseListNodes_9_ReturnsListNode9()
+        public void ParseListNodes_ListNode9_Returns9()
         {
             //Given
             ListNode toParse = new(9, null);
