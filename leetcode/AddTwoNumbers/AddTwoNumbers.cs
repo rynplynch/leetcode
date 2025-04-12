@@ -101,6 +101,10 @@ namespace Leetcode.AddTwoNumbers
             // track the value
             int sum = 0;
 
+            // track node depth, used to determine weight of digit
+            int i = 0;
+
+            // while our ListNode is not null
             while (ln != null)
             {
                 sum += ln.val;
