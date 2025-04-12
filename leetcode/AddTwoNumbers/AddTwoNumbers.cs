@@ -98,10 +98,12 @@ namespace Leetcode.AddTwoNumbers
         // parse a collection of ListNode's, returning an integer value
         public static int ParseListNodes(ListNode? ln)
         {
+            // track the value
             int sum = 0;
 
             while (ln != null)
             {
+                sum += ln.val;
                 ln = ln.next;
             }
             return sum;
