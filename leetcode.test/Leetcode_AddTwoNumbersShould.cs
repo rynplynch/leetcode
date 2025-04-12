@@ -94,5 +94,10 @@ namespace Leetcode.Test
         {
             return new ListNode(0, null);
         }
+
+        private static ListNode CreateListNodeList(int toEncode)
+        {
+            return Solution.EncodeIntIntoListNodeList(toEncode);
+        }
     }
 }
