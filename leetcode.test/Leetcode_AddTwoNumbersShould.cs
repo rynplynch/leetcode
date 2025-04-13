@@ -33,6 +33,25 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void AddTwoNumbers_ListNodeHalfMaxListNodeHalfMax_ReturnsListNodeMaxInt()
+        {
+            //Given
+            double halfMax = int.MaxValue * 0.5;
+
+            double roundedDown = Math.Round(halfMax) - 1;
+            double roundedUp = Math.Round(halfMax);
+
+            ListNode l1 = CreateListNodeList((int)roundedDown);
+            ListNode l2 = CreateListNodeList((int)roundedUp);
+
+            //When
+            ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
+
+            //Then
+            Assert.Equal(CreateListNodeList(int.MaxValue), mockResult);
+        }
+
+        [Fact]
         public void EncodeIntIntoListNodeList_0_ReturnsListNodeWith0()
         {
             //Given
