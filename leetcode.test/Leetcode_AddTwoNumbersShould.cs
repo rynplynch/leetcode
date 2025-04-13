@@ -33,6 +33,21 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void AddTwoNumbers_ListNodes9WithLargeInteger_ReturnsListNodeLargerThanMaxInt()
+        {
+            //Given
+            ListNode l1 = CreateListNodeList(9);
+            ListNode l2 = CreateListNodeList(1999999999);
+
+            //When
+            ListNode mockResult = Solution.AddTwoNumbers(l1,l2);
+
+            //Then
+            // because the return int is larger than
+            Assert.Equal(CreateListNodeList(1), mockResult);
+        }
+
+        [Fact]
         public void AddTwoNumbers_ListNodeHalfMaxListNodeHalfMax_ReturnsListNodeMaxInt()
         {
             //Given
