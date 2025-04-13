@@ -19,6 +19,20 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void AddTwoNumbers_ListNode1ListNode1_ReturnsListNode2()
+        {
+            //Given
+            ListNode l1 = CreateListNodeList(1);
+            ListNode l2 = CreateListNodeList(1);
+
+            //When
+            ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
+
+            //Then
+            Assert.Equal(CreateListNodeList(2), mockResult);
+        }
+
+        [Fact]
         public void EncodeIntIntoListNodeList_0_ReturnsListNodeWith0()
         {
             //Given
