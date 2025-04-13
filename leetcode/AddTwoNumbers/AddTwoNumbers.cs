@@ -47,8 +47,6 @@ namespace Leetcode.AddTwoNumbers
     {
         public static ListNode AddTwoNumbers(ListNode? l1, ListNode? l2)
         {
-            ListNode answer = new();
-            return answer;
         }
 
         // given an integer, encode it into a linked list of ListNode's
