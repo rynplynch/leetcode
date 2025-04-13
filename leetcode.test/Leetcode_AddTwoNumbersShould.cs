@@ -103,6 +103,19 @@ namespace Leetcode.Test
             Assert.Equal(10, mockResult);
         }
 
+        [Fact]
+        public void ParseListNodes_ListNodeMaxInt_ReturnsMaxInt()
+        {
+            //Given
+            ListNode toParse = CreateListNodeList(int.MaxValue);
+
+            //When
+            int mockResult = Solution.ParseListNodes(toParse);
+
+            //Then
+            Assert.Equal(int.MaxValue, mockResult);
+        }
+
         private static ListNode CreateEmptyListNode()
         {
             return new ListNode(0, null);
