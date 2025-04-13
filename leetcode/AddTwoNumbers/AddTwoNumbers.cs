@@ -47,6 +47,11 @@ namespace Leetcode.AddTwoNumbers
     {
         public static ListNode AddTwoNumbers(ListNode? l1, ListNode? l2)
         {
+            // solve for the first ListNode value
+            int operand0 = ParseListNodes(l1);
+
+            // solve for the second ListNode value
+            int operand1 = ParseListNodes(l2);
         }
 
         // given an integer, encode it into a linked list of ListNode's
