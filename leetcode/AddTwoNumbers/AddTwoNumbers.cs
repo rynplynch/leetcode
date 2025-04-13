@@ -52,6 +52,9 @@ namespace Leetcode.AddTwoNumbers
 
             // solve for the second ListNode value
             int operand1 = ParseListNodes(l2);
+
+            // add those values together
+            int sum = operand0 + operand1;
         }
 
         // given an integer, encode it into a linked list of ListNode's
