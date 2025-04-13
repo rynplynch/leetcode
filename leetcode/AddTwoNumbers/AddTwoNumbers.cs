@@ -55,6 +55,9 @@ namespace Leetcode.AddTwoNumbers
 
             // add those values together
             int sum = operand0 + operand1;
+
+            // put the answer back into the ListNode form
+            return EncodeIntIntoListNodeList(sum);
         }
 
         // given an integer, encode it into a linked list of ListNode's
