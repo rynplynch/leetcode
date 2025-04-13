@@ -110,6 +110,11 @@ namespace Leetcode.AddTwoNumbers
                 // solve for the integer to add to the sum
                 // use i to make sure the digits weight is represented
                 sum += ln.val * (int) Math.Pow(10,i);
+
+                // next digit will inhabit next 10's place
+                i++;
+
+                // move to the next node
                 ln = ln.next;
             }
             return sum;
