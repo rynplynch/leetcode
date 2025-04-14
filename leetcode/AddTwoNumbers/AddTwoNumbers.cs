@@ -48,21 +48,21 @@ namespace Leetcode.AddTwoNumbers
         public static ListNode AddTwoNumbers(ListNode? l1, ListNode? l2)
         {
             // solve for the first ListNode value
-            int operand0 = ParseListNodes(l1);
+            ulong operand0 = ParseListNodes(l1);
 
             // solve for the second ListNode value
-            int operand1 = ParseListNodes(l2);
+            ulong operand1 = ParseListNodes(l2);
 
             // add those values together
-            int sum = operand0 + operand1;
+            ulong sum = operand0 + operand1;
 
             // put the answer back into the ListNode form
-            return EncodeIntIntoListNodeList(sum);
+            return EncodeULongIntoListNodeList(sum);
         }
 
         // given an integer, encode it into a linked list of ListNode's
         // the integer will never be negative
-        public static ListNode EncodeIntIntoListNodeList(int val)
+        public static ListNode EncodeULongIntoListNodeList(ulong val)
         {
             // Entry point of the returned linked list
             ListNode entry = new();
@@ -79,10 +79,10 @@ namespace Leetcode.AddTwoNumbers
             while ( val != 0)
             {
                 // solve for the 1's place digit
-                int remainder = val % 10;
+                ulong remainder = val % 10;
 
                 // this remainder is put into the linked list
-                current.val = remainder;
+                current.val = (int) remainder;
 
 
                 // we've record this number, remove it from the whole
@@ -105,10 +105,10 @@ namespace Leetcode.AddTwoNumbers
         }
 
         // parse a collection of ListNode's, returning an integer value
-        public static int ParseListNodes(ListNode? ln)
+        public static ulong ParseListNodes(ListNode? ln)
         {
             // track the value
-            int sum = 0;
+            ulong sum = 0;
 
             // track node depth, used to determine weight of digit
             int i = 0;
@@ -118,7 +118,7 @@ namespace Leetcode.AddTwoNumbers
             {
                 // solve for the integer to add to the sum
                 // use i to make sure the digits weight is represented
-                sum += ln.val * (int) Math.Pow(10,i);
+                sum += (ulong) ( ln.val * Math.Pow(10,i) );
 
                 // next digit will inhabit next 10's place
                 i++;
