@@ -51,19 +51,16 @@ namespace Leetcode.Test
         public void AddTwoNumbers_ListNodeHalfMaxListNodeHalfMax_ReturnsListNodeMaxInt()
         {
             //Given
-            double halfMax = int.MaxValue * 0.5;
+            ulong halfMax = ulong.MaxValue * (ulong) 0.5;
 
-            double roundedDown = Math.Round(halfMax) - 1;
-            double roundedUp = Math.Round(halfMax);
-
-            ListNode l1 = CreateListNodeList((int)roundedDown);
-            ListNode l2 = CreateListNodeList((int)roundedUp);
+            ListNode l1 = CreateListNodeList(halfMax-1);
+            ListNode l2 = CreateListNodeList(halfMax);
 
             //When
             ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
 
             //Then
-            Assert.Equal(CreateListNodeList(int.MaxValue), mockResult);
+            Assert.Equal(CreateListNodeList(ulong.MaxValue), mockResult);
         }
 
         [Fact]
