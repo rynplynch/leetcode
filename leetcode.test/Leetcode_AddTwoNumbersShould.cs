@@ -70,10 +70,10 @@ namespace Leetcode.Test
         public void EncodeIntIntoListNodeList_0_ReturnsListNodeWith0()
         {
             //Given
-            int toEncode = 0;
+            ulong toEncode = 0;
 
             //When
-            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+            ListNode mockResult = Solution.EncodeULongIntoListNodeList(toEncode);
 
             //Then
             Assert.Equal(CreateEmptyListNode(), mockResult);
