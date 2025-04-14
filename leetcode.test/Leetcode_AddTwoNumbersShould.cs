@@ -113,6 +113,29 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void EncodeULongIntoListNodeList_10000000000_ReturnsListNode00000000001()
+        {
+        //Given
+            ulong toEncode = 10000000000;
+
+        //When
+            ListNode mockResult = Solution.EncodeULongIntoListNodeList(toEncode);
+
+        //Then
+            int i = 0;
+            ListNode entry = new (0, null);
+            ListNode expected = entry;
+            while (i < 9)
+            {
+                expected.next = new(0,null);
+                expected = expected.next;
+                i++;
+            }
+            expected.next = new(1,null);
+            Assert.Equal(entry, mockResult);
+        }
+
+        [Fact]
         public void ParseListNodes_EmptyListNode_Returns0()
         {
             //Given
