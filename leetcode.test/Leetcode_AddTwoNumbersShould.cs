@@ -136,6 +136,41 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void EncodeULongIntoListNodeList_MaxULong_ReturnsListNodeMaxULong()
+        {
+            //Given
+            ulong toEncode = ulong.MaxValue;
+
+            //When
+            ListNode mockResult = Solution.EncodeULongIntoListNodeList(toEncode);
+
+            //Then
+            // 18,446,744,073,709,551,615
+            ListNode expected = new(5,
+                    new(1,
+                        new(6,
+                            new(1,
+                                new(5,
+                                    new(5,
+                                        new(9,
+                                            new(0,
+                                                new(7,
+                                                    new(3,
+                                                        new(7,
+                                                            new(0,
+                                                                new(4,
+                                                                    new(4,
+                                                                        new(7,
+                                                                            new(6,
+                                                                                new(4,
+                                                                                    new(4,
+                                                                                        new(8,
+                                                                                            new(1, null))))))))))))))))))));
+
+            Assert.Equal(expected, mockResult);
+        }
+
+        [Fact]
         public void ParseListNodes_EmptyListNode_Returns0()
         {
             //Given
