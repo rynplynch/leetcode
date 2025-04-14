@@ -37,14 +37,14 @@ namespace Leetcode.Test
         {
             //Given
             ListNode l1 = CreateListNodeList(9);
-            ListNode l2 = CreateListNodeList(1999999999);
+            ListNode l2 = CreateListNodeList(9999999991);
 
             //When
             ListNode mockResult = Solution.AddTwoNumbers(l1,l2);
 
             //Then
-            // because the return int is larger than
-            Assert.Equal(CreateListNodeList(1), mockResult);
+            ulong expected = 10000000000 ;
+            Assert.Equal(CreateListNodeList(expected), mockResult);
         }
 
         [Fact]
