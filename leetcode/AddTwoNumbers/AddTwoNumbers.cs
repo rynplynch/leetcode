@@ -45,19 +45,83 @@ namespace Leetcode.AddTwoNumbers
 
     public class Solution
     {
-        public static ListNode AddTwoNumbers(ListNode? l1, ListNode? l2)
+        // in this version I can not store the value of operands
+        public static ListNode AddTwoNumbers(ListNode l1, ListNode l2)
         {
-            // solve for the first ListNode value
-            ulong operand0 = ParseListNodes(l1);
+            // save the entry point of our solution
+            ListNode? entry = null;
 
-            // solve for the second ListNode value
-            ulong operand1 = ParseListNodes(l2);
+            // the pointer we alter in our loop
+            ListNode current = new(0, null);
 
-            // add those values together
-            ulong sum = operand0 + operand1;
+            // flag used to indicate a value needs to be carried
+            bool carryFlag = false;
 
-            // put the answer back into the ListNode form
-            return EncodeULongIntoListNodeList(sum);
+            // while either l1, or l2 have nodes to traverse
+            // OR there is a carry digit to handle
+            while (l1 != null || l2 != null || carryFlag)
+            {
+                // if this is the first loop
+                if (entry == null)
+                {
+                    // record the entry point
+                    entry = current;
+                }
+                else
+                {
+                // make a new node to record the digit at this depth
+                current.next = new(0, null);
+                current = current.next;
+                }
+
+                // the sum at the current node depth
+                int sum = 0;
+
+                // make sure l1 is not null
+                if (l1 != null)
+                {
+                    // add the nodes value
+                    sum += l1.val;
+                    // move to the current node
+                    l1 = l1.next;
+                }
+
+                // make sure l2 is not null
+                if (l2 != null)
+                {
+                    // add the nodes value
+                    sum += l2.val;
+                    // move to the current node
+                    l2 = l2.next;
+                }
+
+                // if there is a carry digit
+                if (carryFlag)
+                {
+                    // add one
+                    sum++;
+
+                    // reset carry flag
+                    carryFlag = false;
+                }
+
+                // if the sum is greater than 10, we must carry a value
+                if (sum >= 10)
+                {
+                    // raise the carry flag
+                    carryFlag = true;
+
+                    // solve for the remainder
+                    int remainder = sum % 10;
+
+                    // record the remainder
+                    current.val = remainder;
+                } else
+                    // otherwise there is no value to carry
+                    current.val = sum;
+            }
+
+            return entry;
         }
 
         // given an integer, encode it into a linked list of ListNode's
