@@ -83,10 +83,10 @@ namespace Leetcode.Test
         public void EncodeIntIntoListNodeList_9_ReturnsListNodeWith9()
         {
             //Given
-            int toEncode = 9;
+            ulong toEncode = 9;
 
             //When
-            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+            ListNode mockResult = Solution.EncodeULongIntoListNodeList(toEncode);
 
             ListNode expected = new(9, null);
 
@@ -95,13 +95,13 @@ namespace Leetcode.Test
         }
 
         [Fact]
-        public void EncodeIntIntoListNodeList_3789_ReturnsListNodesInOrder9873()
+        public void EncodeULongIntoListNodeList_3789_ReturnsListNodesInOrder9873()
         {
             //Given
-            int toEncode = 3789;
+            ulong toEncode = 3789;
 
             //When
-            ListNode mockResult = Solution.EncodeIntIntoListNodeList(toEncode);
+            ListNode mockResult = Solution.EncodeULongIntoListNodeList(toEncode);
 
             ListNode expected = new(9, null);
             expected.next = new ListNode(8, null);
@@ -119,10 +119,10 @@ namespace Leetcode.Test
             ListNode toParse = CreateEmptyListNode();
 
             //When
-            int mockResult = Solution.ParseListNodes(toParse);
+            ulong mockResult = Solution.ParseListNodes(toParse);
 
             //Then
-            Assert.Equal(0, mockResult);
+            Assert.Equal((ulong)0, mockResult);
         }
 
         [Fact]
@@ -132,10 +132,10 @@ namespace Leetcode.Test
             ListNode toParse = new(9, null);
 
             //When
-            int mockResult = Solution.ParseListNodes(toParse);
+            ulong mockResult = Solution.ParseListNodes(toParse);
 
             //Then
-            Assert.Equal(9, mockResult);
+            Assert.Equal((ulong)9, mockResult);
         }
 
         [Fact]
@@ -145,23 +145,23 @@ namespace Leetcode.Test
             ListNode toParse = CreateListNodeList(10);
 
             //When
-            int mockResult = Solution.ParseListNodes(toParse);
+            ulong mockResult = Solution.ParseListNodes(toParse);
 
             //Then
-            Assert.Equal(10, mockResult);
+            Assert.Equal((ulong)10, mockResult);
         }
 
         [Fact]
-        public void ParseListNodes_ListNodeMaxInt_ReturnsMaxInt()
+        public void ParseListNodes_ListNodeMaxULong_ReturnsMaxULong()
         {
             //Given
-            ListNode toParse = CreateListNodeList(int.MaxValue);
+            ListNode toParse = CreateListNodeList(ulong.MaxValue);
 
             //When
-            int mockResult = Solution.ParseListNodes(toParse);
+            ulong mockResult = Solution.ParseListNodes(toParse);
 
             //Then
-            Assert.Equal(int.MaxValue, mockResult);
+            Assert.Equal(ulong.MaxValue, mockResult);
         }
 
         private static ListNode CreateEmptyListNode()
@@ -169,9 +169,9 @@ namespace Leetcode.Test
             return new ListNode(0, null);
         }
 
-        private static ListNode CreateListNodeList(int toEncode)
+        private static ListNode CreateListNodeList(ulong toEncode)
         {
-            return Solution.EncodeIntIntoListNodeList(toEncode);
+            return Solution.EncodeULongIntoListNodeList(toEncode);
         }
     }
 }
