@@ -33,6 +33,20 @@ namespace Leetcode.Test
         }
 
         [Fact]
+        public void AddTwoNumbers_ListNode01ListNode01_ReturnsListNode02()
+        {
+            //Given
+            ListNode l1 = CreateListNodeList(10);
+            ListNode l2 = CreateListNodeList(10);
+
+            //When
+            ListNode mockResult = Solution.AddTwoNumbers(l1, l2);
+
+            //Then
+            Assert.Equal(CreateListNodeList(20), mockResult);
+        }
+
+        [Fact]
         public void AddTwoNumbers_ListNodes9WithLargeInteger_ReturnsListNodeLargerThanMaxInt()
         {
             //Given
